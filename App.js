@@ -22,11 +22,13 @@ import Artboard12 from './src/screens/Artboard12';
 import Artboard13 from './src/screens/Artboard13';
 import Artboard14 from './src/screens/Artboard14';
 import Artboard15 from './src/screens/Artboard15';
+import Splash from './src/screens/Splash';
 
 export default class App extends Component {
   render() {
     return (
-      <Artboard15 />
+      <Splash />
+      // <Artboard15 />
       // <Artboard14 />
       // <Artboard13 />
       // <Artboard12 />
