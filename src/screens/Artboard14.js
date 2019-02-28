@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Header from '../components/Header'
+import localization from '../localization/localization';
 
 import logo from '../assets/Image/Artboard8/logo.png';
 import BG from '../assets/Image/Artboard14/bg.png';
@@ -37,13 +38,13 @@ class Artboard14 extends Component{
     render () {
         return (
             <View style={{backgroundColor:'white'}}>
-                <Header headerTitle="الشروط والأحكام"/>
+                <Header headerTitle={localization.rechargeTheBalance}/>
                 <Image source={BG}  style={{width:wp('100'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 <View style={{justifyContent:'center', alignItems:'center'}}>
                     <Image source={logo} style={{width:wp('40%'), height:hp('20%'), resizeMode:'contain'}}/>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('10')}}>  
-                    <Text style={{color:'black', fontSize:wp("6%"), fontWeight:'bold'}}> رصيدك </Text>
+                    <Text style={{color:'black', fontSize:wp("6%"), fontWeight:'bold'}}> {localization.Balance} </Text>
                     <Text style={{color:'black', fontSize:wp("6%"), fontWeight:'bold'}}> 1255 ريال </Text>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center', marginVertical:hp('1%')}}>
@@ -54,7 +55,7 @@ class Artboard14 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="ادخل رقم الكود"
+                            placeholder={localization.CodeNumber}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="username"
@@ -68,7 +69,7 @@ class Artboard14 extends Component{
                 <View style={{justifyContent:'center', alignItems:'center'}}>
                     <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                         <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                        <Text style={styles.buttonText}> شحن </Text>
+                        <Text style={styles.buttonText}> {localization.shipping} </Text>
                     </TouchableOpacity>
                 </View>
             </View>

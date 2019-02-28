@@ -10,6 +10,7 @@ import {
     listenOrientationChange as lor,
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
+import localization from '../localization/localization';
 
 import Splash from '../assets/Image/Splash/bg.png';
 import logo from '../assets/Image/Splash/logo.png';

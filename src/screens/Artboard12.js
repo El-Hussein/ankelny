@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Header from '../components/Header'
+import localization from '../localization/localization';
 
 import logo from '../assets/Image/Artboard8/logo.png';
 import BG from '../assets/Image/Artboard12/bg.png';
@@ -38,7 +39,7 @@ class Artboard12 extends Component{
     render () {
         return (
             <View style={{backgroundColor:'white'}}>
-                <Header headerTitle="الشروط والأحكام"/>
+                <Header headerTitle={localization.termsAndConditions}/>
                 <Image source={BG}  style={{width:wp('100'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 <View style={{justifyContent:'center', alignItems:'center'}}>
                     <Image source={logo} style={{width:wp('40%'), height:hp('15%'), resizeMode:'contain'}}/>
@@ -50,7 +51,7 @@ class Artboard12 extends Component{
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                     <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                         <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                        <Text style={styles.buttonText}> موافق </Text>
+                        <Text style={styles.buttonText}> {localization.accept} </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('3%')}}>

@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import Header from '../components/Header';
 
@@ -39,7 +40,7 @@ class Artboard2 extends Component{
             <View style={{backgroundColor:'whi'}}>
                 <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 {/* HEADER */}
-                <Header headerTitle="تسجيل العميل"/>
+                <Header headerTitle={localization.headerSigninClient}/>
                 
                 
 
@@ -52,7 +53,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="اسم المستخدم"
+                            placeholder={localization.userName}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="username"
@@ -92,7 +93,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="الايميل"
+                            placeholder={localization.email}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="email"
@@ -106,7 +107,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="رقم الجوال"
+                            placeholder={localization.phoneNumber}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -120,7 +121,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="العنوان"
+                            placeholder={localization.address}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="address"
@@ -135,7 +136,7 @@ class Artboard2 extends Component{
                     <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> تسجيل </Text>
+                            <Text style={styles.buttonText}> {localization.signup} </Text>
                         </TouchableOpacity>
                     </View>
      

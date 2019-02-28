@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import Header from '../components/Header';
 
@@ -26,7 +27,7 @@ import searchText from '../assets/Image/Artboard10/searchText.png';
 import buttonBG from '../assets/Image/Artboard1/buttonBG.png';
 import lockBlue from '../assets/Image/Artboard1/lockBlue.png';
 
-class Artboard4 extends Component{
+class Artboard10 extends Component{
 
     constructor(props) {
          super()
@@ -36,7 +37,7 @@ class Artboard4 extends Component{
             <View style={{backgroundColor:'white'}}>
                 {/* <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/> */}
                 {/* HEADER */}
-                <Header headerTitle="تسجيل الدخول"/>
+                <Header headerTitle={localization.signin}/>
                 
                 
 
@@ -50,7 +51,7 @@ class Artboard4 extends Component{
                         <Image source={search} style={{width:wp('4%'), height:wp('4%'), resizeMode:'contain'}}/>
                         <TextInput
                             style={styles.textInput}
-                            placeholder="الاقلاع"
+                            placeholder={localization.source}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -62,7 +63,7 @@ class Artboard4 extends Component{
                         <Image source={search} style={{width:wp('4%'), height:wp('4%'), resizeMode:'contain'}}/>
                         <TextInput
                             style={styles.textInput}
-                            placeholder="الوصول"
+                            placeholder={localization.dis}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="password"
@@ -76,7 +77,7 @@ class Artboard4 extends Component{
                     <View style={styles.inputBorderArea} >
                         <TextInput
                             style={styles.textArea}
-                            placeholder="الاقلاع"
+                            placeholder={localization.message}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -87,7 +88,7 @@ class Artboard4 extends Component{
                         />
                         <Image source={searchText} style={{width:wp('4.5%'), height:wp('4.5%'), resizeMode:'contain'}}/>
                     </View>
-                    <View style={[styles.inputBorder, {height:hp('6%'), borderRadius:wp('4%')}]} >
+                    <View style={[styles.inputBorder, {height:hp('6%'), borderRadius:wp('4%'), paddingHorizontal:wp('2%')}]} >
                         <TextInput
                             style={styles.textInput}
                             placeholder=""
@@ -98,7 +99,7 @@ class Artboard4 extends Component{
                             underlineColorAndroid="transparent"
                             value="1250 ريال"
                         />
-                        <Text style={{borderBottomRightRadius:wp('4%'), borderTopRightRadius:wp('4%'), height:hp('6%'), paddingHorizontal:wp('1%'), fontSize:wp('4%'), color:'#47196B', textAlignVertical:'center', backgroundColor:'#F89526'}}> السعر التقريبي </Text>
+                        <Text style={{borderBottomRightRadius:wp('4%'), borderTopRightRadius:wp('4%'), height:hp('6%'), paddingHorizontal:wp('1%'), fontSize:wp('4%'), color:'#47196B', textAlignVertical:'center', backgroundColor:'#F89526'}}> {localization.expectedPayment} </Text>
                     </View>
                 </View>
 
@@ -106,7 +107,7 @@ class Artboard4 extends Component{
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('1%')}}>
                     <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                         <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                        <Text style={styles.buttonText}> إرسال </Text>
+                        <Text style={styles.buttonText}> {localization.send} </Text>
                     </TouchableOpacity>
                 </View>
      
@@ -116,7 +117,7 @@ class Artboard4 extends Component{
         }
     }
     
-    export default Artboard4
+    export default Artboard10
     
     const styles = StyleSheet.create({
     inputBorder:{

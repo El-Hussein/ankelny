@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import Header from '../components/Header';
 
@@ -42,7 +43,7 @@ class Artboard5 extends Component{
             <View style={{backgroundColor:'white'}}>
                 {/* <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/> */}
                 {/* HEADER */}
-                <Header headerTitle="الرئيسية"/>
+                <Header headerTitle={localization.home}/>
                 
                 
 
@@ -71,7 +72,7 @@ class Artboard5 extends Component{
                     <View style={{justifyContent:'center', alignItems:'center', marginBottom:hp('5%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> التالي </Text>
+                            <Text style={styles.buttonText}> {localization.next} </Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>

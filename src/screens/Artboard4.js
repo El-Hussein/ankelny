@@ -17,6 +17,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import Header from '../components/Header';
 
@@ -41,7 +42,7 @@ class Artboard2 extends Component{
             <View style={{backgroundColor:'whi'}}>
                 <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 {/* HEADER */}
-                <Header headerTitle="تسجيل السائق"/>
+                <Header headerTitle={localization.headerSigninDriver}/>
                 
                 
 
@@ -54,7 +55,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="اسم المستخدم"
+                            placeholder={localization.userName}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="username"
@@ -98,7 +99,7 @@ class Artboard2 extends Component{
                         // selectedValue={this.state.language}
                         style={{color:'#47196B', width:wp('60%'), marginRight:wp('10%')}}
                         >
-                            <Picker.Item label="اختر الفئة" value="choose_city" />
+                            <Picker.Item label={localization.selectCategory} value="choose_city" />
                             <Picker.Item label="طوخ" value="toukh" />
                         </Picker>
                     </View>
@@ -106,13 +107,13 @@ class Artboard2 extends Component{
 
                     <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginBottom:hp('1.5%')}}>
                         <ImageBackground source={button} style={{width:wp('25%'), height:hp('6%'), resizeMode:'contain', justifyContent:'center', alignItems:'flex-start', paddingLeft:wp('3%')}}>
-                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> الرخصه </Text>
+                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> {localization.License} </Text>
                         </ImageBackground>
                         <ImageBackground source={button} style={{width:wp('25%'), height:hp('6%'), resizeMode:'contain', justifyContent:'center', alignItems:'flex-start', paddingLeft:wp('3%')}}>
-                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> صوره الهوية </Text>
+                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> {localization.imageFormat} </Text>
                         </ImageBackground>
                         <ImageBackground source={button} style={{width:wp('25%'), height:hp('6%'), resizeMode:'contain', justifyContent:'center', alignItems:'flex-start', paddingLeft:wp('3%')}}>
-                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> صورة الاستمارة </Text>
+                            <Text style={{justifyContent:'center', alignItems:'center', fontSize:wp('3.5%'), color:'black', width:wp('15%'), textAlign:'center', fontWeight:'bold', textAlign:'justify'}}> {localization.imageID} </Text>
                         </ImageBackground>
                     </View>
 
@@ -120,7 +121,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="رقم الجوال"
+                            placeholder={localization.phoneNumber}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -134,7 +135,7 @@ class Artboard2 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="العنوان"
+                            placeholder={localization.address}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="address"
@@ -149,7 +150,7 @@ class Artboard2 extends Component{
                     <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('5%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> تسجيل </Text>
+                            <Text style={styles.buttonText}> {localization.signup} </Text>
                         </TouchableOpacity>
                     </View>
      

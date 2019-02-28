@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Header from '../components/Header'
+import localization from '../localization/localization';
 
 import logo from '../assets/Image/Artboard8/logo.png';
 import BG from '../assets/Image/Artboard12/bg.png';
@@ -40,7 +41,7 @@ class Artboard13 extends Component{
     render () {
         return (
             <View style={{backgroundColor:'white'}}>
-                <Header headerTitle="الشروط والأحكام"/>
+                <Header headerTitle={localization.callUs}/>
                 <Image source={BG}  style={{width:wp('100'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 <View style={{justifyContent:'center', alignItems:'center'}}>
                     <Image source={logo} style={{width:wp('40%'), height:hp('20%'), resizeMode:'contain'}}/>
@@ -50,7 +51,7 @@ class Artboard13 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="اسم المستخدم"
+                            placeholder={localization.userName}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="username"
@@ -63,7 +64,7 @@ class Artboard13 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="رقم الجوال"
+                            placeholder={localization.phoneNumber}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -76,7 +77,7 @@ class Artboard13 extends Component{
                      <View style={styles.inputBorderArea} >
                         <TextInput
                             style={styles.textArea}
-                            placeholder="الرسالة"
+                            placeholder={localization.message}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -91,7 +92,7 @@ class Artboard13 extends Component{
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                     <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                         <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                        <Text style={styles.buttonText}> إرسال </Text>
+                        <Text style={styles.buttonText}> {localization.send} </Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('1%')}}>

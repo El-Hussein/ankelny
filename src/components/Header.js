@@ -13,6 +13,8 @@ import {
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { NavigationActions } from 'react-navigation';
+import localization from '../localization/localization';
+import {I18nManager} from 'react-native';
 
 
 class Header extends React.Component {
@@ -20,7 +22,7 @@ class Header extends React.Component {
         return (
             <View style={styles.header}>
                 <TouchableOpacity style={{position:'absolute', left:wp('4%')}}>
-                    <Icon name="arrow-left" color="white" size={wp('7%')}/>
+                    <Icon name={!I18nManager.isRTL?"arrow-left":"arrow-right"} color="white" size={wp('7%')}/>
                 </TouchableOpacity>
                 <Text style={{fontSize:wp('5%'), fontWeight:'bold', textAlign:'right', color:'#47196B'}}> {this.props.headerTitle} </Text>
                 <TouchableOpacity  style={{position:'relative', right:wp('0%')}}>

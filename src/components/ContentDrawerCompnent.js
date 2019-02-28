@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     TextInput,
+    I18nManager
 } from 'react-native';
 import {
     widthPercentageToDP as wp,
@@ -16,6 +17,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import DrawerBG from '../assets/Image/Artboard15/drawer.png';
 import ProfileDefault from '../assets/Image/Artboard15/profile.png';
@@ -34,23 +36,26 @@ class Artboard3 extends Component{
         super();
         this.state= {
             list:[
-                {name:'الصفحة الرئيسية', src:feeds, active:true, link:'Home'},
-                {name:'تسجيل الدخول', src:logout, active:false, link:'Profile'},
-                {name:'الإشعارات', src:notify, active:false, link:'MyCart'},
-                {name:'طلباتي', src:cart, active:false, link:'Call_Us'},
-                {name:'شحن الرصيد', src:saveMoney, active:false, link:'Conditions'},
-                {name:'إتصل بنا', src:friends, active:false, link:'Signin'},
-                {name:'الشروط والاحكام', src:settings, active:false, link:'Exit'},
-                {name:'خروج', src:login, active:false, link:'Exit'},
+                {name:localization.home, src:feeds, active:true, link:'Home'},
+                {name:localization.signin, src:logout, active:false, link:'Profile'},
+                {name:localization.notifications, src:notify, active:false, link:'MyCart'},
+                {name:localization.myRequests, src:cart, active:false, link:'Call_Us'},
+                {name:localization.rechargeTheBalance, src:saveMoney, active:false, link:'Conditions'},
+                {name:localization.callUs, src:friends, active:false, link:'Signin'},
+                {name:localization.termsAndConditions, src:settings, active:false, link:'Exit'},
+                {name:localization.exit, src:login, active:false, link:'Exit'},
             ],
             userType:'customer',
         }
     }
 
     render () {
+        activeStyle=StyleSheet.create({
+            LR:!I18nManager.isRTL?{right:wp('0%')}:{left:wp('0%')}
+        });
          return (
             <View>
-                <Image source={DrawerBG}  style={{width:wp('100%'), height:hp('100%'), position:'absolute', zIndex:-1, right:wp('0%')}}/>
+                <Image source={DrawerBG}  style={[activeStyle.LR,{width:wp('100%'), height:hp('100%'), position:'absolute', zIndex:-1}]}/>
                 <View style={{height:hp('25%'), width:wp('85%'), justifyContent:'center', alignItems:'center', marginVertical:hp('5%')}}>
                     <Image source={ProfileDefault} style={{width:wp('18%'), borderWidth:wp('0.8%'), borderColor:'white', height:wp('18%'), borderRadius:wp('6%'), backgroundColor:'red', marginBottom:wp('1%')}}/>
                     <Text style={{fontWeight:'bold', fontSize:wp('4.2%'), color:'black'}}> محمد عبدالله إبراهيم </Text>

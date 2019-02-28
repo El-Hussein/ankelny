@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Header from '../components/Header'
+import localization from '../localization/localization';
 
 import logo from '../assets/Image/Artboard8/logo.png';
 import BG from '../assets/Image/Artboard8/bg.png';
@@ -38,7 +39,7 @@ class Artboard11 extends Component{
     render () {
         return (
             <View style={{backgroundColor:'white'}}>
-                <Header headerTitle="إستعادة كلمة المرور"/>
+                <Header headerTitle={localization.changePassword}/>
                 <Image source={BG}  style={{width:wp('100'), height:hp('105%'), zIndex:-1, position:'absolute' }}/>
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('8%'), marginBottom:hp('3%')}}>
                     <Image source={logo} style={{width:wp('50%'), height:hp('20%'), resizeMode:'contain'}}/>
@@ -50,7 +51,7 @@ class Artboard11 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="البريد الإلكتروني"
+                            placeholder={localization.email}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="email"
@@ -63,7 +64,7 @@ class Artboard11 extends Component{
                 <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                     <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                         <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                        <Text style={styles.buttonText}> إرسال </Text>
+                        <Text style={styles.buttonText}> {localization.send} </Text>
                     </TouchableOpacity>
                 </View>
             </View>

@@ -3,6 +3,9 @@ import {
     widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 import { createDrawerNavigator } from 'react-navigation';
+import localization from '../localization/localization';
+
+import {I18nManager} from 'react-native'
 
 import Artboard5 from './Artboard5';
 import ContentDrawerComponent from '../components/ContentDrawerCompnent';
@@ -22,6 +25,6 @@ export default RootNavigator = createDrawerNavigator(
         showsVerticalScrollIndicator: true,
         contentComponent:props => <ContentDrawerComponent {...props}/> ,
         drawerWidth:wp('75%'),
-        drawerPosition:'right'
+        drawerPosition:!I18nManager.isRTL?'right':'left'
     }
 )

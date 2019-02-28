@@ -16,7 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import localization from '../localization/localization';
 import Header from '../components/Header';
 
 import logo from '../assets/Image/Artboard1/logo.png';
@@ -36,7 +36,7 @@ class Artboard1 extends Component{
             <View style={{backgroundColor:'whi'}}>
                 <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 {/* HEADER */}
-                <Header headerTitle="تسجيل الدخول"/>
+                <Header headerTitle={localization.headerSignin}/>
                 
                 
 
@@ -49,7 +49,7 @@ class Artboard1 extends Component{
                     <View style={styles.inputBorder} >
                         <TextInput
                             style={styles.textInput}
-                            placeholder="اسم المستخدم"
+                            placeholder={localization.userName}
                             autoCorrect={false}
                             returnKeyType="next"
                             ref="phone"
@@ -74,7 +74,7 @@ class Artboard1 extends Component{
 
                     <View style={{flexDirection:'row', justifyContent:'space-between', marginHorizontal:wp('1%'), alignItems:'center'}}>
                         <TouchableOpacity style={{flexDirection:'row'}}>
-                            <Text style={{color:'#47196B', fontSize:wp('4%')}}> نسيت كلمه المرور</Text>
+                            <Text style={{color:'#47196B', fontSize:wp('4%')}}> {localization.forgetPassword}</Text>
                             <Image source={lockBlue} style={{width:wp('4%'), height:wp('4%'), resizeMode:'contain'}}/>
                         </TouchableOpacity>
                     </View>
@@ -82,7 +82,7 @@ class Artboard1 extends Component{
                     <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('10%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonBG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> دخول </Text>
+                            <Text style={styles.buttonText}> {localization.signin} </Text>
                         </TouchableOpacity>
                     </View>
      

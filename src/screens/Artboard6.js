@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import localization from '../localization/localization';
 
 import Header from '../components/Header';
 
@@ -48,7 +49,7 @@ class Artboard5 extends Component{
             <View style={{backgroundColor:'white'}}>
                 <Image source={BG}  style={{width:wp('105'), height:hp('100%'), zIndex:-1, position:'absolute' }}/>
                 {/* HEADER */}
-                <Header headerTitle="طلبات جديدة للسائق"/>
+                <Header headerTitle={localization.newOrdersDriver}/>
                 
                 
 
@@ -57,7 +58,7 @@ class Artboard5 extends Component{
                 </View>
                 
                 <View style={{flexDirection:'row', marginBottom:hp('1.5%'), marginHorizontal:wp('10%'), height:hp('6%'), justifyContent:'flex-end', alignItems:'center', backgroundColor:'rgba(255, 255, 255, 0.8)', borderRadius:wp('2%'), borderColor:'#F89526', borderWidth:wp('0.2%')}}>
-                    <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> الإقلاع </Text>
+                    <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> {localization.source} </Text>
                     <Image source={person} style={{width:wp('4%'), marginHorizontal:wp('2%'), height:wp('4%'), position:'relative', right:wp('0%')}}/>   
                 </View>
                 
@@ -73,7 +74,7 @@ class Artboard5 extends Component{
                             <Text style={{color:'black', textAlign:'right', fontSize:wp('4%'), fontWeight:'bold', textAlign:'right'}}> الرياض </Text>
                         </View>
                         <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> الإقلاع </Text>
+                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> {localization.source} </Text>
                             <Image source={signout} style={{width:wp('6%'), marginHorizontal:wp('2%'), height:wp('6%')}}/>
                         </View>
                     </View>
@@ -85,7 +86,7 @@ class Artboard5 extends Component{
                         </View>
 
                         <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> الوصول </Text>
+                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> {localization.dis} </Text>
                             <Image source={login} style={{width:wp('6%'), marginHorizontal:wp('2%'), height:wp('6%')}}/>
                         </View>
                     </View>
@@ -95,7 +96,7 @@ class Artboard5 extends Component{
                         <Text style={{color:'black', width:wp('30%'), textAlign:'right', fontSize:wp('4%'), fontWeight:'bold', textAlign:'right'}}> 25 مارس 2019 </Text>
                         
                         <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> التاريخ </Text>
+                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> {localization.date} </Text>
                             <Image source={calender} style={{width:wp('6%'), marginHorizontal:wp('2%'), height:wp('6%')}}/>
                         </View>
                     </View>
@@ -104,7 +105,7 @@ class Artboard5 extends Component{
                         <Text style={{color:'black', width:wp('30%'), textAlign:'right', fontSize:wp('4%'), fontWeight:'bold', textAlign:'right'}}> 2532 ريال </Text>
                         
                         <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> القيمة التقديرية </Text>
+                            <Text style={{color:'black', fontSize:wp('4%'), width:'auto', textAlign:'right'}}> {localization.expectedPayment} </Text>
                             <Image source={weight} style={{width:wp('6%'), marginHorizontal:wp('2%'), height:wp('6%'), resizeMode:'contain'}}/>
                         </View>
                     </View>
@@ -116,13 +117,13 @@ class Artboard5 extends Component{
                     <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonG}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> قبول </Text>
+                            <Text style={styles.buttonText}> {localization.accept} </Text>
                         </TouchableOpacity>
                     </View>
                     <View style={{justifyContent:'center', alignItems:'center', marginTop:hp('2%')}}>
                         <TouchableOpacity style={{justifyContent:'center', alignItems:'center', width:wp('40%'), height:hp('6%')}}>
                             <Image source={buttonR}  style={{width:wp('40%'), height:hp('6%'), zIndex:-1, position:'absolute', resizeMode:'contain' }}/>
-                            <Text style={styles.buttonText}> رفض </Text>
+                            <Text style={styles.buttonText}> {localization.refuse} </Text>
                         </TouchableOpacity>
                     </View>
                 </View>

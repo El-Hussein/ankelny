@@ -7,6 +7,9 @@
  */
 
 import React, {Component} from 'react';
+import {I18nManager} from 'react-native';
+import localization from './src/localization/localization';
+
 import Artboard1 from './src/screens/Artboard1';
 import Artboard2 from './src/screens/Artboard2';
 import Artboard3 from './src/screens/Artboard3';    // not finished delayed
@@ -25,10 +28,22 @@ import Artboard15 from './src/screens/Artboard15';
 import Splash from './src/screens/Splash';
 
 export default class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      language:'en'
+    }
+    localization.setLanguage(this.state.language);
+    if(this.state.language=='ar'){
+      I18nManager.forceRTL(true);
+    }else if(this.state.language=='en'){
+      I18nManager.forceRTL(false);
+    }
+  }
   render() {
     return (
-      <Splash />
-      // <Artboard15 />
+      // <Splash />
+      <Artboard15 />
       // <Artboard14 />
       // <Artboard13 />
       // <Artboard12 />

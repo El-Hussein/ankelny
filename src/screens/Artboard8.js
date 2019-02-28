@@ -16,6 +16,7 @@ import {
     removeOrientationListener as rol
 } from 'react-native-responsive-screen';
 
+import localization from '../localization/localization';
 
 import logo from '../assets/Image/Artboard8/logo.png';
 import BG from '../assets/Image/Artboard8/bg.png';
@@ -41,10 +42,10 @@ class Artboard5 extends Component{
                     <Image source={logo} style={{width:wp('50%'), height:hp('10%'), resizeMode:'contain'}}/>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center'}}>
-                    <Text style={{color:'white', paddingHorizontal:wp('5%'), backgroundColor:'#47196B', fontSize:wp('6.5%')}}> تم إرسال طلبك بنجاح </Text>
+                    <Text style={{color:'white', paddingHorizontal:wp('5%'), backgroundColor:'#47196B', fontSize:wp('6.5%')}}> {localization.sentSucces} </Text>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'center'}}>
-                    <Text style={{color:'#7F7F7F', paddingHorizontal:wp('5%'), fontSize:wp('5%')}}> سيتم ارسال اشعار عند الموافقة </Text>
+                    <Text style={{color:'#7F7F7F', paddingHorizontal:wp('5%'), fontSize:wp('5%')}}> {localization.willBeNotified} </Text>
                 </View>
                 <View style={{justifyContent:'center', alignItems:'flex-end', marginBottom:hp('3%')}}>
                     <Image source={car} style={{width:wp('85%'), height:hp('33%')}}/>
